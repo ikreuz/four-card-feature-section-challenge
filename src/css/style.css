@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --border-card: .4rem;
+    --border-button: 1.6rem;
+
+    /** widths */
+    --break-mobile: 375px;
+
+    --card-height: 15.5rem;
+    --card-width: 22rem;
+
+
+    /** colors primary */
+    --color-primary-red: hsl(0, 78%, 62%);
+    --color-primary-cyan: hsl(180, 62%, 55%);
+    --color-primary-orange: hsl(34, 97%, 64%);
+    --color-primary-blue: hsl(212, 86%, 64%);
+
+    /** colors neutral */
+    --color-very-dark-blue: hsl(234, 12%, 34%);
+    --color-grayish-blue: hsl(229, 6%, 66%);
+    --color-very-light-gray: hsl(0, 0%, 98%);
+
+    /** colors footer */
+    --color-attribution: hsl(228, 45%, 44%);
+
+    --font-size: 15px;
+    --font-size-attribution: .8rem;
+    --font-base: 'Poppins', sans-serif;
+    --font-weight-200: 200;
+    --font-weight-400: 400;
+    --font-weight-600: 600;
+
+    --max-desktop-width: 1156px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-base);
+    font-size: var(--font-size);
+    background-color: var(--color-very-light-gray);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: var(--break-mobile);
+    padding: 0;
+}
+
+.title-1,
+.title-2 {
+    margin: 0 auto;
+    text-align: center;
+    font-size: x-large;
+}
+
+.title-1 {
+    padding: 5rem 0 0;
+    font-weight: var(--font-weight-200);
+}
+
+.title-2 {
+    padding: 0 .2rem;
+    font-weight: var(--font-weight-600);
+}
+
+.subtitle {
+    margin: 0 auto;
+    padding: 1rem 1.7rem 4rem;
+}
+
+.subtitle .paragraph {
+    color: var(--color-grayish-blue);
+    text-align: center;
+}
+
+.data {
+    display: grid;
+
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    max-width: var(--max-desktop-width);
+    margin: 0 auto;
+    gap: 1.9rem;
+}
+
+.card {
+    border-radius: var(--border-card);
+    display: flex;
+    height: var(--card-height);
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    position: relative;
+    width: var(--card-width);
+}
+
+
+.card .card-title {
+    padding: .6rem 0;
+}
+
+.card .card-text {
+    color: var(--color-grayish-blue);
+    font-size: medium;
+    font-weight: var(--font-weight-200);
+    padding: 0 .21rem;
+}
+
+.card img {
+    bottom: 0;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    position: absolute;
+    right: 0;
+}
+
+.transition {
+    animation-duration: 100ms;
+    box-shadow: 0px 9px 20px 5px hsl(212deg 86% 64% / 13%), 1px 10px 20px 0px rgb(18 17 36 / 5%);
+    transition: box-shadow .15s cubic-bezier(.25, .1, .25, .1), 0.3s ease-in;
+}
+
+/** cards */
+.supervisor {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+    overflow: hidden;
+    border-top: .3rem solid var(--color-primary-cyan);
+}
+
+
+.team-builder {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: center;
+    overflow: hidden;
+    border-top: .3rem solid var(--color-primary-red);
+}
+
+.karma {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    align-self: center;
+    overflow: hidden;
+    border-top: .3rem solid var(--color-primary-orange);
+}
+
+.calculator {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    align-self: center;
+    align-self: center;
+    overflow: hidden;
+    border-top: .3rem solid var(--color-primary-blue);
+}
+
+footer .attribution {
+    padding-top: 2rem;
+    padding-bottom: .5rem;
+    color: var(--color-text-paragraph);
+}
+
+footer .attribution {
+    font-size: .8rem;
+    text-align: center;
+}
+
+footer .attribution a {
+    color: var(--color-attribution);
+}
+
+
+@media only screen and (min-width: 1156px) {
+    .container {
+        max-width: var(--max-desktop-width);
+    }
+
+    .title-1,
+    .title-2 {
+        margin: 0 auto;
+        text-align: center;
+        font-size: xx-large;
+    }
+
+    .title-1 {
+        padding: 5rem .2rem .6rem;
+        font-weight: var(--font-weight-200);
+    }
+
+    .title-2 {
+        padding: 0 .2rem;
+        font-weight: var(--font-weight-600);
+    }
+
+    .subtitle {
+        margin: 0 auto;
+        padding: 1rem 21rem 4rem;
+    }
+
+    .subtitle .paragraph {
+        color: var(--color-grayish-blue);
+        text-align: center;
+    }
+
+    .data {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+    }
+
+    /** cards */
+    .supervisor {
+        grid-column: 1/2;
+        grid-row: 1/3;
+
+    }
+
+
+    .team-builder {
+        grid-column: 2/3;
+        grid-row: 1/2;
+
+    }
+
+    .karma {
+        grid-column: 2/3;
+        grid-row: 2/3;
+
+    }
+
+    .calculator {
+        grid-column: 3/4;
+        grid-row: 1/3;
+    }
+
+}
